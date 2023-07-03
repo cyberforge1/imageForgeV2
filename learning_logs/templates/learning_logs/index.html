@@ -27,6 +27,7 @@
   style="height: 20vh"
 >
   <button
+    id="generateButton"
     type="submit"
     class="btn btn-success btn-lg mt-1"
     data-bs-toggle="modal"
@@ -66,14 +67,49 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close
         </button>
-        <button type="button" class="btn btn-primary">Create New Prompt</button>
-        <button type="button" class="btn btn-success">
+        <button type="button" class="btn btn-primary" id="createPromptButton">
+          Create New Prompt
+        </button>
+        <button type="button" class="btn btn-success" id="sendPromptButton">
           Send Prompt to DALL•E 2
         </button>
-        <!-- Changed button color -->
       </div>
     </div>
   </div>
 </div>
+
+<!-- Addition of a script tag to run the query generation program when the 'GENERATION' button is clicked -->
+
+<script>
+  $(document).ready(function () {
+    $("#generateButton").click(function () {
+      // Execute your script here
+      alert("GENERATION button clicked!"); // Example script, replace with your own code
+    });
+  });
+</script>
+
+<!-- Addition of a script tag to run the query generation program when the 'Create
+New Prompt' button is clicked -->
+
+<script>
+  $(document).ready(function () {
+    $("#createPromptButton").click(function () {
+      // Execute your script here
+      alert("Prompt button clicked!"); // Example script, replace with your own code
+    });
+  });
+</script>
+
+<!-- Addition of a script tag to run the query the DALL•E 2 API when the 'Send Prompt to DALL•E 2' button is clicked -->
+
+<script>
+  $(document).ready(function () {
+    $("#sendPromptButton").click(function () {
+      // Execute your script here
+      alert("Generation button clicked!"); // Example script, replace with your own code
+    });
+  });
+</script>
 
 {% endblock content %}
