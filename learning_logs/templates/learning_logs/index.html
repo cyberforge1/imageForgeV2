@@ -1,0 +1,79 @@
+{% extends 'learning_logs/base.html' %} {% block page_header %}
+<div class="p-3 mb-4 bg-light border rounded-3">
+  <div class="container-fluid py-4">
+    <h1 class="display-3">Welcome to imageForge!</h1>
+
+    {% endblock page_header %}{% block content %}
+
+    <p class="lead">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada
+      massa nec orci volutpat, non luctus lacus efficitur. Ut vitae nunc velit.
+      Nam vulputate pellentesque leo, vel pharetra neque eleifend at. Mauris ac
+      dolor ut metus convallis luctus. Nunc finibus orci ipsum, id bibendum
+      lacus posuere in. Vestibulum at justo felis. Fusce eget enim nec est
+      aliquam dignissim a a ligula. Integer id ipsum turpis.
+    </p>
+
+    <a class="btn btn-primary btn-lg mt-1" href="{% url 'accounts:register' %}"
+      >Register &raquo;</a
+    >
+  </div>
+</div>
+
+{# This is the GENERATION button #}
+
+<div
+  class="d-flex justify-content-center align-items-center"
+  style="height: 20vh"
+>
+  <button
+    type="submit"
+    class="btn btn-success btn-lg mt-1"
+    data-bs-toggle="modal"
+    data-bs-target="#myModal"
+  >
+    GENERATE
+  </button>
+</div>
+
+{# Addition of the Modal pop-up box template #}
+
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" style="margin-top: 0vh">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title mx-auto" id="exampleModalLabel">
+          Generated Image Prompt:
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Insertion of the image generation prompt</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Create New Prompt</button>
+        <button type="button" class="btn btn-success">
+          Send Prompt to DALL•E 2
+        </button>
+        <!-- Changed button color -->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
